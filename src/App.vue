@@ -1,36 +1,36 @@
 <template>
-  <div class="max-w-2xl mx-auto mt-8">
-    <h1 class="text-4xl font-bold text-center text-blue-600">Link Shortener</h1>
+  <div class="max-w-2xl mx-4 sm:mx-auto mt-36">
+    <h1 class="text-2xl sm:text-4xl font-bold text-center text-blue-600">Link Shortener</h1>
 
-    <div class="mt-8 bg-white p-8 rounded-lg shadow-md">
-      <label for="url" class="block text-lg font-medium">Enter URL:</label>
+    <div class="mt-8 bg-gray-100 p-8 rounded-lg shadow-2xl shadow-slate-500 ">
+      <label for="url" class="block sm:text-lg font-medium">Enter URL:</label>
       <input
         type="url"
         id="url"
         v-model="url"
         placeholder="Enter a valid URL"
-        class="w-full p-3 mt-2 border border-gray-300 rounded-md"
+        class="w-full p-3 mt-2 border border-gray-300 rounded-md text-sm sm:text-base"
       />
 
-      <button @click="shortenUrl" class="w-full mt-4 bg-blue-600 text-white p-3 rounded-md">
+      <button @click="shortenUrl" class="w-full mt-4 bg-blue-600 text-white p-3 text-sm sm:text-base rounded-md">
         Shorten
       </button>
 
       <div v-if="shortenedUrl" class="mt-6">
-        <p class="font-semibold text-lg">Shortened URL:</p>
-        <div class="flex items-center">
+        <p class="font-semibold text-sm sm:text-lg">Shortened URL:</p>
+        <div class="flex items-center text-sm sm:text-base">
           <input
             type="text"
             :value="shortenedUrl"
             class="p-3 w-full border border-gray-300 rounded-md"
             readonly
           />
-          <button @click="copyUrl" class="ml-4 p-3 bg-gray-200 rounded-md">Copy</button>
+          <button @click="copyUrl" class="ml-4 p-3 bg-gray-200 rounded-md text-sm sm:text-base">Copy</button>
         </div>
       </div>
 
       <!-- Display error message -->
-      <p v-if="error" class="text-red-500 mt-4">{{ error }}</p>
+      <p v-if="error" class="text-sm sm:text-base text-red-500 mt-4">{{ error }}</p>
     </div>
   </div>
 </template>
